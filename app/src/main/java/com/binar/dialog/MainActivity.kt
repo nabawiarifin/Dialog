@@ -13,14 +13,16 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         //TODO: 1. AlertDialog Standard
-        val standardButton: Button = findViewById(R.id.standard_button)
-        standardButton.setOnClickListener{
-            val dialog = AlertDialog.Builder(this)
-            dialog.setTitle("Dialog Cancelable")
-            dialog.setMessage("Dialog Cancelable can be close by clicking outside")
-            dialog.setCancelable(true)
-            dialog.show()
-        }
+//        val standardButton: Button = findViewById(R.id.standard_button)
+//        standardButton.setOnClickListener{
+//            val dialog = AlertDialog.Builder(this)
+//            dialog.setTitle("Dialog Cancelable")
+//            dialog.setMessage("Dialog Cancelable can be close by clicking outside")
+//            dialog.setCancelable(true)
+//            dialog.show()
+//        }
+
+
 //
 
         //TODO: 2. AlertDialog with Action Button
@@ -53,7 +55,7 @@ class MainActivity : AppCompatActivity() {
         val customDialogButton: Button = findViewById(R.id.custom_dialog_button)
 
         customDialogButton.setOnClickListener {
-            
+
             val view = LayoutInflater.from(this).inflate(R.layout.alert_dialog,null,false)
             val closeButton: Button = view.findViewById(R.id.close_button)
             val dialogBuilder = AlertDialog.Builder(this)
@@ -68,6 +70,12 @@ class MainActivity : AppCompatActivity() {
             dialog.show()
         }
 
+        //TODO: 4. Alert Dialog Fragment
+        val fragmentDialogButton: Button = findViewById(R.id.fragment_dialog_button)
+        fragmentDialogButton.setOnClickListener {
+            val alertDialogFragment = AlertDialogFragment()
+            alertDialogFragment.show(supportFragmentManager,"tag")
+        }
 
     }
 
